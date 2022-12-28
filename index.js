@@ -15,7 +15,8 @@
 
 
 const { Telegraf } = require('telegraf');
-const bot = new Telegraf('5891789903:AAH1V9tGzCbCuXL6X9HZUG_AJqEh07CEmZM');
+const config = require('./config.json');
+const bot = new Telegraf(config.key);
 bot.start((ctx) => ctx.reply('Welcome'));
 bot.command("hey", (ctx) => ctx.reply("hello there"))
 bot.launch();
